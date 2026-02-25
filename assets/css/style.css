@@ -1,0 +1,607 @@
+:root{
+  --bg:#0b0f17;
+  --panel:#0f1624;
+  --soft:#111b2e;
+  --text:#e9eef7;
+  --muted:#a9b3c7;
+  --gold:#d8b46a;
+  --line:rgba(255,255,255,.10);
+  --radius:18px;
+  --shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
+  background: radial-gradient(1000px 600px at 15% 0%, rgba(216,180,106,.18), transparent 55%),
+              radial-gradient(800px 600px at 85% 10%, rgba(90,120,255,.10), transparent 55%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.container{width:min(1120px, 92%);margin:0 auto}
+.skip{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip:focus{left:16px;top:16px;width:auto;height:auto;background:#fff;color:#000;padding:10px;border-radius:10px}
+
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,15,23,.65);
+  border-bottom:1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+
+.brand{display:flex;align-items:center;gap:12px}
+.brand-text small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.brand-footer{margin-bottom:10px}
+
+.menu{display:flex;align-items:center;gap:18px}
+.menu a{color:var(--muted);font-weight:600;font-size:14px}
+.menu a.active{color:var(--text)}
+.menu a:hover{color:var(--text)}
+
+.menu-btn{
+  display:none;
+  width:44px;height:44px;border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  cursor:pointer;
+}
+.menu-btn span{display:block;height:2px;background:var(--text);margin:7px 10px;border-radius:2px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 16px;border-radius:14px;
+  background:linear-gradient(135deg, rgba(216,180,106,.95), rgba(216,180,106,.70));
+  color:#161616;font-weight:800;
+  border:1px solid rgba(216,180,106,.55);
+  box-shadow: 0 10px 24px rgba(216,180,106,.14);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn-outline{
+  background:transparent;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:none;
+}
+.btn-ghost{
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:none;
+}
+.link{color:var(--gold);font-weight:700}
+
+.hero{padding:54px 0 22px}
+.hero-grid{display:grid;grid-template-columns: 1.1fr .9fr;gap:26px;align-items:center}
+.kicker{color:var(--gold);font-weight:800;letter-spacing:.3px}
+h1{font-size:42px;line-height:1.15;margin:10px 0 12px}
+.gold{color:var(--gold)}
+.lead{color:var(--muted);font-size:18px;max-width:56ch}
+
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 14px}
+.trust{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;color:var(--muted)}
+.trust li{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:8px 12px;border-radius:999px}
+
+.hero-media{position:relative}
+.hero-media img{
+  border-radius: var(--radius);
+  height:420px;object-fit:cover;
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.hero-card{
+  position:absolute;left:16px;bottom:16px;
+  background:rgba(15,22,36,.78);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px 14px;
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+}
+.hero-card span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+
+.section{padding:56px 0}
+.section-soft{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  
+  margin-top: 10px;
+}
+.section-head{margin-bottom:22px}
+.section-head h2{margin:0 0 6px;font-size:28px}
+.section-head p{margin:0;color:var(--muted)}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:14px;
+}
+.card{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+.card h3{margin:0 0 8px;font-size:16px}
+.card p{margin:0 0 10px;color:var(--muted)}
+
+.strip{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.strip-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.faq details{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding:14px 16px;
+  margin:10px 0;
+}
+.faq summary{cursor:pointer;font-weight:800}
+.faq p{color:var(--muted);margin:10px 0 0}
+
+.cta{padding:26px 0 64px}
+.cta-box{
+  background:linear-gradient(135deg, rgba(216,180,106,.16), rgba(255,255,255,.02));
+  border:1px solid rgba(216,180,106,.25);
+  border-radius: calc(var(--radius) + 6px);
+  padding:26px;
+  box-shadow: var(--shadow);
+}
+.cta-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+.page-hero{padding:40px 0 14px;border-bottom:1px solid var(--line)}
+.page-hero h1{font-size:36px;margin:10px 0 8px}
+
+.two-col{display:grid;grid-template-columns: 1fr 1fr;gap:18px;align-items:start}
+
+.media-card{
+  position:relative;border-radius: var(--radius);overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.media-card img{height:420px;object-fit:cover}
+.media-card .overlay{
+  position:absolute;left:14px;bottom:14px;
+  background:rgba(15,22,36,.78);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px 14px;
+  backdrop-filter: blur(8px);
+}
+
+.steps{display:grid;grid-template-columns: repeat(4, 1fr);gap:14px}
+.step{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding:16px;
+}
+.step p{color:var(--muted);margin:8px 0 0}
+
+.bullets{color:var(--muted)}
+.list{list-style:none;margin:0;padding:0;color:var(--muted)}
+.list li{margin:8px 0}
+.small{font-size:13px}
+.muted{color:var(--muted)}
+.note{
+  margin-top:18px;
+  padding:14px 16px;
+  background:rgba(216,180,106,.10);
+  border:1px solid rgba(216,180,106,.25);
+  border-radius: var(--radius);
+}
+
+.service-block{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background:rgba(255,255,255,.03);
+  margin:14px 0;
+}
+
+.form-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding:18px;
+}
+label{display:block;font-weight:700;margin-bottom:12px}
+input,select,textarea{
+  width:100%;
+  margin-top:8px;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(0,0,0,.18);
+  color:var(--text);
+}
+textarea{resize:vertical}
+
+.map{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background:rgba(255,255,255,.02);
+}
+.map iframe{width:100%;height:360px;border:0}
+
+.footer{border-top:1px solid var(--line);padding:28px 0}
+.footer-grid{display:grid;grid-template-columns: 1.2fr 1fr 1fr;gap:18px}
+.footer-bottom{padding-top:14px;border-top:1px solid var(--line);color:var(--muted)}
+
+/* ===============================
+   WhatsApp Floating — Premium Bank Style
+   =============================== */
+
+/* Hover sofisticado */
+50%{
+    box-shadow:
+      0 22px 55px rgba(0,0,0,0.6),
+      0 0 18px rgba(216,180,106,0.18);
+  }
+  100%{
+    box-shadow:
+      0 20px 50px rgba(0,0,0,0.55),
+      0 0 0 rgba(216,180,106,0.0);
+  }
+}
+
+/* Mobile mantém proporção */
+@media (max-width: 768px){
+  }
+@media (max-width: 980px){
+  .cards{grid-template-columns: repeat(2, 1fr)}
+  .steps{grid-template-columns: repeat(2, 1fr)}
+  .hero-grid{grid-template-columns: 1fr}
+  .hero-media img{height:360px}
+  .two-col{grid-template-columns: 1fr}
+  h1{font-size:36px}
+}
+
+@media (max-width: 720px){
+  .menu-btn{display:block}
+  .menu{
+    position:absolute;right:4%;top:68px;
+    flex-direction:column;align-items:stretch;
+    background:rgba(11,15,23,.95);
+    border:1px solid var(--line);
+    border-radius: 16px;
+    padding:10px;
+    width:min(320px, 92vw);
+    display:none;
+  }
+  .menu.open{display:flex}
+  .cards{grid-template-columns: 1fr}
+  .steps{grid-template-columns: 1fr}
+}
+/* Espaçamento premium entre blocos principais */
+.section + .section-soft{
+  margin-top: 64px;
+}
+/* =========================
+   PREMIUM MODERNO (Upgrade)
+   cole no final do style.css
+   ========================= */
+
+:root{
+  --bg2: #05070c;
+  --panel3: rgba(255,255,255,0.035);
+}
+
+/* Fundo mais “clean premium” */
+body{
+  background:
+    radial-gradient(900px 500px at 12% 5%, rgba(201,160,74,0.10), transparent 60%),
+    radial-gradient(800px 480px at 85% 0%, rgba(255,255,255,0.05), transparent 62%),
+    var(--bg2);
+}
+
+/* Tipografia mais editorial */
+h1,h2,h3{
+  letter-spacing: -0.03em;
+}
+.lead{
+  font-size: 18px;
+  line-height: 1.65;
+  max-width: 860px;
+}
+
+/* Header mais “fino” e sofisticado */
+.header{
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.menu a{
+  font-weight: 560;
+}
+.menu a.active{
+  background: rgba(255,255,255,0.06);
+}
+
+/* Cards mais “premium tile” */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+  border: 1px solid rgba(255,255,255,0.09);
+}
+.card::before{
+  opacity: .75;
+}
+.card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(201,160,74,0.25);
+}
+
+/* Linha dourada minimal no topo do card (diferente do comum) */
+.card{
+  padding-top: 22px;
+}
+.card::after{
+  content:"";
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(201,160,74,0.0), rgba(201,160,74,0.55), rgba(201,160,74,0.0));
+  opacity: .55;
+}
+
+/* Links mais “chiques” */
+.link{
+  font-weight: 700;
+}
+.link:hover{
+  transform: translateX(3px);
+}
+
+/* Seções com mais respiro (sem “buraco”) */
+.section{
+  padding: 72px 0;
+}
+.section-soft{
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* CTA mais “institucional premium” */
+.cta-box{
+  border: 1px solid rgba(201,160,74,0.18);
+}
+.cta-box h2{
+  letter-spacing: -0.03em;
+}
+
+/* Botões menos “brilhantes”, mais premium */
+.btn{
+  box-shadow: 0 10px 24px rgba(201,160,74,0.16);
+}
+.btn:hover{
+  box-shadow: 0 14px 32px rgba(201,160,74,0.22);
+}
+
+/* WhatsApp flutuante mais discreto (premium) */
+/* LOGO (Header) */
+.brand-logo{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+/* LOGO (Footer) */
+.footer-logo{
+  width: 260px;       /* ajuste fino: 220–320 */
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
+}
+/* Logo horizontal no header */
+.brand-logo-horizontal{
+  height: 48px;   /* pode testar 44px / 52px também */
+  width: auto;
+  object-fit: contain;
+  display: block;
+
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.footer .list{
+  margin-top:10px;
+}
+
+.footer .list a{
+  color: var(--muted);
+}
+
+.footer .list a:hover{
+  color: var(--text);
+}
+/* ===== Menu Premium Underline ===== */
+
+/* ===== Menu Underline Luxury ===== */
+
+.menu a{
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:0;
+  height:2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: translateX(-50%);
+  transition: width .35s ease;
+  opacity:.8;
+}
+
+/* Hover */
+.menu a:hover::after{
+  width:100%;
+}
+
+/* Página ativa */
+.menu a.active::after{
+  width:100%;
+  opacity:1;
+}
+/* ===== CONSOLIDADO PREMIUM (sem duplicidades) ===== */
+
+/* Logo horizontal no header */
+.brand-logo-horizontal{
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Footer (grid) */
+.footer{
+  margin-top: 80px;
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+.footer-logo{
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
+}
+.footer .list{margin-top:10px}
+.footer .list a{color: var(--muted)}
+.footer .list a:hover{color: var(--text)}
+
+.footer-bottom{
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+/* WhatsApp flutuante (premium discreto) */
+/* Menu underline premium (uma única versão) */
+.menu a{
+  position: relative;
+  padding-bottom: 6px;
+}
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:0;
+  height:2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: translateX(-50%);
+  transition: width .35s ease;
+  opacity:.8;
+}
+.menu a:hover::after{width:100%}
+.menu a.active::after{width:100%;opacity:1}
+
+/* Responsivo footer */
+@media (max-width: 980px){
+  .footer-grid{grid-template-columns: 1fr; gap: 22px;}
+}
+
+/* ===============================
+   WhatsApp Floating — FINAL (Premium Bank)
+   =============================== */
+.whatsapp{
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  background: linear-gradient(145deg, rgba(15,20,30,.86), rgba(10,14,22,.96));
+  border: 1px solid rgba(216,180,106,.55);
+
+  color: var(--text);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: .35px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.58),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .25s ease;
+  z-index: 9999;
+
+  animation: whatsappBreath 3.5s ease-in-out infinite;
+}
+
+.whatsapp:hover{
+  transform: translateY(-4px);
+  border-color: rgba(216,180,106,.95);
+  color: var(--gold);
+
+  box-shadow:
+    0 30px 75px rgba(0,0,0,.70),
+    0 0 40px rgba(216,180,106,.35);
+}
+
+@keyframes whatsappBreath{
+  0%{
+    box-shadow: 0 20px 55px rgba(0,0,0,.58), 0 0 0 rgba(216,180,106,0);
+  }
+  50%{
+    box-shadow: 0 23px 62px rgba(0,0,0,.64), 0 0 18px rgba(216,180,106,.18);
+  }
+  100%{
+    box-shadow: 0 20px 55px rgba(0,0,0,.58), 0 0 0 rgba(216,180,106,0);
+  }
+}
+
+@media (max-width: 768px){
+  .whatsapp{
+    right: 18px;
+    bottom: 18px;
+    padding: 14px 22px; /* mantém proporção */
+    font-size: 15px;
+  }
+}
+
+/* WhatsApp — comportamento (aparecer após scroll) */
+.whatsapp{
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+.whatsapp.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
