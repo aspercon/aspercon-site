@@ -620,7 +620,7 @@ h1,h2,h3{
 
 /* Equipe: o mesmo card aceita perfis com ou sem credenciais e formação. */
 .team-section{background:var(--panel);border-top:1px solid var(--line)}
-.team-page .team-section{padding-bottom:56px}
+.team-page .team-section{padding-top:40px;padding-bottom:40px}
 .team-page .footer{margin-top:32px}
 .team-section .section-head{margin-bottom:32px}
 .team-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg);box-shadow:var(--shadow)}
@@ -637,9 +637,16 @@ h1,h2,h3{
 .team-card__education div + div{margin-top:14px}
 .team-card__education dt{font-weight:600;color:var(--text)}
 .team-card__education dd{margin:3px 0 0;color:var(--muted)}
-.team-card--leadership{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center}
-.team-card--leadership .team-card__body{padding:36px 40px}
-.team-card--leadership h3{font-size:clamp(28px,3vw,36px)}
+.team-card--leadership{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);align-items:center;max-width:920px;margin-inline:auto}
+.team-card--leadership .team-card__portrait{aspect-ratio:4 / 5;object-fit:contain;max-height:400px}
+.team-card--leadership .team-card__body{padding:22px 26px}
+.team-card--leadership .kicker{margin-bottom:8px}
+.team-card--leadership h3{font-size:30px;margin-bottom:8px}
+.team-card--leadership .team-card__role{margin-bottom:6px}
+.team-card--leadership .team-card__divider{margin:16px 0}
+.team-card--leadership .team-card__bio{font-size:16px;line-height:1.65}
+.team-card--leadership .team-card__education{margin-top:18px;padding-top:14px;line-height:1.5}
+.team-card--leadership .team-card__education div + div{margin-top:10px}
 .team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-@media (max-width:980px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-card--leadership .team-card__body{padding:28px}}
-@media (max-width:720px){.team-card--leadership,.team-grid{grid-template-columns:minmax(0,1fr)}.team-card--leadership .team-card__portrait{max-width:420px;justify-self:center}.team-card--leadership .team-card__body{padding:28px 24px}}
+@media (max-width:980px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.team-card--leadership,.team-grid{grid-template-columns:minmax(0,1fr)}.team-card--leadership .team-card__portrait{max-width:256px;max-height:320px;justify-self:center}.team-card--leadership .team-card__body{padding:22px}.team-card--leadership h3{font-size:28px}}
